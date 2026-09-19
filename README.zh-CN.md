@@ -1,10 +1,23 @@
-# Ops Tool Spec · 运维工具规范
+# Ops Tool Spec (OTS) · 运维工具规范
 
 **一套让 AI 能安全驱动运维类软件的词汇表。**
 
 > 状态：**v0.1 草案，不稳定。** 会有破坏性改动。欢迎试用并告诉我们哪里写错了。
 >
 > ★ 英文版 [README.md](README.md) 是正本；本文是中文译本。
+
+## 名字
+
+简称 **OTS**，全称 **Ops Tool Spec**（运维工具规范）。三个词，和
+MCP（Model Context Protocol）、LSP（Language Server Protocol）、DAP（Debug Adapter Protocol）同构。
+
+★ **名字刻意不带厂商。** ONVIF 不叫「Axis ONVIF」，MCP 不叫「Anthropic MCP」——
+**一个以某家公司命名的规范，它的竞争对手不会采纳**，
+而采纳与否是一份规范唯一值得被写出来的理由。署名写在 README 和 NOTICE 里，那才是它该在的地方。
+
+（曾考虑 **OATS**，否掉了：撞 FINRA 的 Order Audit Trail System，
+同在「技术+合规」语境里；而且 oats 是燕麦，**搜索结果会被燕麦片淹没**——
+可搜索性对一份想被全世界采纳的规范是硬指标。）
 
 ## 要解决什么
 

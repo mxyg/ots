@@ -1,8 +1,18 @@
-# Ops Tool Spec
+# Ops Tool Spec (OTS)
 
 **A vocabulary for operations software that AI agents can drive safely.**
 
 > Status: **v0.1 — draft, unstable.** Expect breaking changes. Please try it and tell us where it is wrong.
+
+## Naming
+
+Short name **OTS**. Full name **Ops Tool Spec** — three words, the same shape as
+MCP (Model Context Protocol), LSP (Language Server Protocol) and DAP (Debug Adapter Protocol).
+
+The name deliberately carries no vendor. ONVIF is not "Axis ONVIF" and MCP is not
+"Anthropic MCP": **a specification named after one company is one that its competitors will not
+adopt**, and adoption is the only thing that makes a specification worth writing.
+Attribution lives in the README and NOTICE, where it belongs.
 
 ## What problem this solves
 

@@ -1,4 +1,4 @@
-# Ops Tool Spec — Core, v0.1
+# Ops Tool Spec (OTS) — Core, v0.1
 
 > **Draft. Unstable.** Written alongside a working implementation, not by a committee.
 > Breaking changes are expected before v1.0.
