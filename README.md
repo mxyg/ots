@@ -71,12 +71,28 @@ have been a tool an agent could call.
 
 | What | License | Why |
 |---|---|---|
-| Specification text | **CC BY 4.0** (`LICENSE`) | A standard has to be implementable by anyone, **including competitors**. That is what a standard is. |
+| Specification text | **CC BY 4.0** (`LICENSE`) **and Apache-2.0** (`LICENSE-APACHE`) — take either | A standard has to be implementable by anyone, **including competitors**. That is what a standard is. Apache-2.0 is offered alongside because it carries an express patent grant and patent-retaliation clause that CC BY does not. |
 | Schemas in `schema/` | **Apache-2.0** (`schema/LICENSE`) | So you can copy them straight into your codebase. |
 
 The reference implementation is licensed separately and more restrictively. **That is deliberate
 and it does not apply to this specification.** Implement this spec commercially, freely, with no
 obligation to us beyond attribution.
+
+## Provenance, and the one thing we ask
+
+This specification was first published by 辽宁昱弘智能科技有限公司. The commit history in this
+repository is the record of that; we are not asking for anything beyond it being possible to
+trace the work back to us.
+
+**Anyone may maintain, extend or fork this.** We are not going to gatekeep it, and we have no
+interest in owning a committee seat.
+
+The one thing we ask is the mirror image of what we grant: **do not turn around and assert
+intellectual property claims against us, or against anyone else, over the contents of this
+specification.** It is published openly, with a public timestamp, precisely so that it is prior
+art and stays free for everyone — including its authors.
+
+This is not legal advice and we are not your lawyers.
 
 ## Status and how to help
 
