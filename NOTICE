@@ -1,14 +1,11 @@
 Ops Tool Spec (OTS)
-Copyright 2026 辽宁昱弘智能科技有限公司 (Liaoning Yuhox Intelligent Technology Co., Ltd.)
+Copyright 2026 辽宁昱弘智能科技有限公司
+              (Liaoning Yuhox Intelligent Technology Co., Ltd.)
 
-First published by Liaoning Yuhox Intelligent Technology Co., Ltd.
-This repository's commit history is the record of that publication.
+First published 19 September 2026.
 
-Specification text  : CC BY 4.0 (LICENSE) AND Apache License 2.0 (LICENSE-APACHE) — take either
-Files under schema/ : Apache License 2.0 (schema/LICENSE)
+Specification text : CC BY 4.0 (LICENSE) and Apache License 2.0 (LICENSE-APACHE);
+                     recipients may rely on either.
+schema/            : Apache License 2.0 (schema/LICENSE).
 
-Anyone may use, implement, fork and maintain this specification, including commercially and
-including in competition with the authors. It is published openly, with a public timestamp, so
-that it is prior art and stays free for everyone — including its authors.
-
-Contributions require a Developer Certificate of Origin sign-off. See CONTRIBUTING.md.
+Contributions require a Developer Certificate of Origin sign-off; see CONTRIBUTING.md.

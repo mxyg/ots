@@ -1,106 +1,61 @@
 # Ops Tool Spec (OTS)
 
-**A vocabulary for operations software that AI agents can drive safely.**
+A specification for the tools that operations software exposes to an autonomous caller: what
+those tools return, and the conditions under which a tool that modifies system state may be
+executed.
 
-> Status: **v0.1 — draft, unstable.** Expect breaking changes. Please try it and tell us where it is wrong.
+Layered above a tool transport such as the [Model Context Protocol](https://modelcontextprotocol.io).
+It does not define transport, discovery or invocation.
 
-## Naming
+**Version 0.1 — Draft. Unstable.** Breaking changes may be introduced at any minor version
+prior to 1.0.
 
-Short name **OTS**. Full name **Ops Tool Spec** — three words, the same shape as
-MCP (Model Context Protocol), LSP (Language Server Protocol) and DAP (Debug Adapter Protocol).
+## Contents
 
-The name deliberately carries no vendor. ONVIF is not "Axis ONVIF" and MCP is not
-"Anthropic MCP": **a specification named after one company is one that its competitors will not
-adopt**, and adoption is the only thing that makes a specification worth writing.
-Attribution lives in the README and NOTICE, where it belongs.
-
-## What problem this solves
-
-[MCP](https://modelcontextprotocol.io) settled *how* software exposes tools to an AI agent:
-transport, discovery, invocation. That part is done, and this spec builds on it rather than competing with it.
-
-What MCP deliberately leaves open is *what* a given kind of software should expose:
-
-- Which tools a network diagnostic tool ought to offer, and what they are called
-- What a tool should return so an agent can act on it without parsing prose
-- Which operations an agent may perform on its own, and which ones a human must approve
-- How to stay safe when the data the agent reads may itself contain instructions
-
-Every vendor answers these differently today. The result is that an agent which can drive one
-vendor's tool has to be taught again for the next one. Other domains solved this with a
-semantic layer on top of a generic transport — ONVIF over HTTP/SOAP for cameras,
-FHIR over HTTP for health records. **This layer does not exist yet for AI-callable operations software.**
-
-## What is in here
-
-| | |
+| Path | |
 |---|---|
-| `spec/v0.1/core.md` | The core rules: return shape, read/mutate split, human approval, safety |
-| `schema/` | Machine-readable tool and result schemas |
-| Domain profiles | Concrete tool vocabularies per domain. First one: network diagnostics |
+| `spec/v0.1/core.md` | Core specification |
+| `spec/v0.1/core.zh-CN.md` | Chinese translation (informative) |
+| `schema/` | Machine-readable definitions |
 
-## The five rules, in short
+English is the normative text. Where a translation differs, the English text governs.
 
-1. **Tools return structured verdicts, not sentences.** A verdict is a stable code plus
-   parameters. Prose is for the UI to render, in whatever language the user reads.
-2. **Read and mutate are separate classes.** Read tools are freely callable.
-   Mutating tools change someone's machine and are governed by rule 3.
-3. **Authorization comes from a human action, never from a call argument.**
-   `"user_approved": true` in a request means nothing.
-4. **Assume the caller may be compromised.** Device banners, logs, captured packets and
-   web pages the agent reads can contain instructions aimed at the agent. This is the actual
-   reason mutations need a human, not mere caution.
-5. **No capability exists only in the API.** Anything an agent can do, a person can do and see
-   in the product's own interface.
+## Scope
 
-Read `spec/v0.1/core.md` for the detail.
+The core specification defines:
 
-## Why we wrote it
+- Declaration of tools as read or mutating
+- The structure of results: verdicts, verdict codes and errors
+- The conditions under which a mutation may be executed
+- Handling of long-running operations
+- Conformance classes and versioning
 
-We build operations software — video surveillance, ticketing, broadcast control, and a network
-toolkit — and we kept writing the same answers to the questions above, slightly differently each time.
-This is those answers, written down once, in the open, so that anyone can implement them,
-including our competitors. That is what makes it a specification and not a product feature.
+It defines no domain-specific tools. Domain profiles do so.
 
-The reference implementation is **NetKit**, a field network toolkit. It exists because on
-2026-09-19 an engineer spent a day diagnosing a site by hand — changing NIC addresses, scanning
-ports, probing RTSP streams, reading GPU load over SSH — and every one of those steps should
-have been a tool an agent could call.
+## Licence
 
-## Licensing — please read this part
+| Part | Licence |
+|---|---|
+| Specification text | [CC BY 4.0](LICENSE) and [Apache-2.0](LICENSE-APACHE) — recipients may rely on either |
+| `schema/` | [Apache-2.0](schema/LICENSE) |
 
-| What | License | Why |
-|---|---|---|
-| Specification text | **CC BY 4.0** (`LICENSE`) **and Apache-2.0** (`LICENSE-APACHE`) — take either | A standard has to be implementable by anyone, **including competitors**. That is what a standard is. Apache-2.0 is offered alongside because it carries an express patent grant and patent-retaliation clause that CC BY does not. |
-| Schemas in `schema/` | **Apache-2.0** (`schema/LICENSE`) | So you can copy them straight into your codebase. |
+Both licences permit commercial implementation. Apache-2.0 is offered alongside CC BY 4.0
+because it includes an express patent grant and patent-retaliation clause.
 
-The reference implementation is licensed separately and more restrictively. **That is deliberate
-and it does not apply to this specification.** Implement this spec commercially, freely, with no
-obligation to us beyond attribution.
+## Contributing
 
-## Provenance, and the one thing we ask
+See [CONTRIBUTING.md](CONTRIBUTING.md). Contributions require a Developer Certificate of Origin
+sign-off.
 
-This specification was first published by 辽宁昱弘智能科技有限公司. The commit history in this
-repository is the record of that; we are not asking for anything beyond it being possible to
-trace the work back to us.
+This specification may be used, implemented, forked and maintained by anyone, including
+commercially. The obligations are those stated in the licences above.
 
-**Anyone may maintain, extend or fork this.** We are not going to gatekeep it, and we have no
-interest in owning a committee seat.
+## Provenance
 
-The one thing we ask is the mirror image of what we grant: **do not turn around and assert
-intellectual property claims against us, or against anyone else, over the contents of this
-specification.** It is published openly, with a public timestamp, precisely so that it is prior
-art and stays free for everyone — including its authors.
+First published 19 September 2026 by 辽宁昱弘智能科技有限公司
+(Liaoning Yuhox Intelligent Technology Co., Ltd.). The commit history of this repository is the
+record of publication.
 
-This is not legal advice and we are not your lawyers.
+Contact: support@yuhox.com
 
-## Status and how to help
-
-v0.1 is a draft written alongside a working implementation, not a committee document.
-It will change. The most useful thing you can do is implement part of it and tell us what did
-not survive contact with your product.
-
----
-
-Maintained by 辽宁昱弘智能科技有限公司 (Liaoning Yuhox Intelligent Technology Co., Ltd.) ·
-[中文版](README.zh-CN.md)
+[中文](README.zh-CN.md)
