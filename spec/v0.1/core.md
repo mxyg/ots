@@ -1,12 +1,10 @@
 # Ops Tool Spec (OTS) — Core Specification
 
-| | |
-|---|---|
-| **Version** | 0.1 |
-| **Category** | Draft |
-| **Published** | 19 September 2026 |
-| **Editor** | Liaoning Yuhox Intelligent Technology Co., Ltd. |
-| **This version** | <https://github.com/mxyg/ots/blob/main/spec/v0.1/core.md> |
+**Version:** 0.1\
+**Category:** Draft\
+**Published:** 19 September 2026\
+**Editor:** Liaoning Yuhox Intelligent Technology Co., Ltd.\
+**This version:** <https://github.com/mxyg/ots/blob/main/spec/v0.1/core.md>
 
 ## Abstract
 
@@ -265,6 +263,6 @@ that determination remains with the operator.
 
 ## Editor's Address
 
-Liaoning Yuhox Intelligent Technology Co., Ltd.
-Email: support@yuhox.com
+Liaoning Yuhox Intelligent Technology Co., Ltd.\
+Email: <support@yuhox.com>\
 URI: <https://github.com/mxyg/ots>

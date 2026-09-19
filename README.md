@@ -12,7 +12,7 @@ prior to 1.0.
 
 ## Contents
 
-| Path | |
+| Path | Contents |
 |---|---|
 | `spec/v0.1/core.md` | Core specification |
 | `spec/v0.1/core.zh-CN.md` | Chinese translation (informative) |

@@ -1,12 +1,10 @@
 # Ops Tool Spec (OTS) — 核心规范
 
-| | |
-|---|---|
-| **版本** | 0.1 |
-| **类别** | 草案 |
-| **发布日期** | 2026 年 9 月 19 日 |
-| **编者** | 辽宁昱弘智能科技有限公司 |
-| **本版本** | <https://github.com/mxyg/ots/blob/main/spec/v0.1/core.zh-CN.md> |
+**版本：** 0.1\
+**类别：** 草案\
+**发布日期：** 2026 年 9 月 19 日\
+**编者：** 辽宁昱弘智能科技有限公司\
+**本版本：** <https://github.com/mxyg/ots/blob/main/spec/v0.1/core.zh-CN.md>
 
 > **本文为中文译本，属参考性文本。** 规范性文本为英文版 [core.md](core.md)；
 > 两者有出入时，以英文版为准。
@@ -241,6 +239,6 @@ MUST NOT 依赖该字段是否存在、其内容或其语言。
 
 ## 编者地址
 
-辽宁昱弘智能科技有限公司
-电子邮件：support@yuhox.com
+辽宁昱弘智能科技有限公司\
+电子邮件：<support@yuhox.com>\
 URI：<https://github.com/mxyg/ots>
